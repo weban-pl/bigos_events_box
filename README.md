@@ -16,6 +16,8 @@ After you install BigosEventsBox and add it to your Gemfile, you need to run the
 
 ```console
 rails generate bigos_events_box:install
+rake bigos_event_box:install:migrations
+rake db:migrate
 ```
 
 
