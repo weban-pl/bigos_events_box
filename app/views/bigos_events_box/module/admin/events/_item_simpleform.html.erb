@@ -3,7 +3,7 @@
     <%= f.input :name %>
     <%= f.input :image %>
     <div id="event_options">
-      <%= link_to_add_association 'Add new event options', f, :event_options, :partial => "bigos_events_box/module/event_options/form", "data-association-insertion-method" => "after", :class => "small button" %>
+      <%= link_to_add_association 'Add new event options', f, :event_options, :partial => "bigos_events_box/module/admin/event_options/form", "data-association-insertion-method" => "after", :class => "small button" %>
     </div>
     <%= link_to_remove_association "Remove event", f, :class => "alert small button"%>
   <% end %>
