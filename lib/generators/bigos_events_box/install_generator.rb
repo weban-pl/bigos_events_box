@@ -5,7 +5,7 @@ module BigosEventsBox
 
       desc "Creates a BigosEventsBox initializer."
       def copy_initializer
-        template "bigos_events_box.rb", "config/initializers/bigos_contact_box.rb"
+        template "bigos_events_box.rb", "config/initializers/bigos_events_box.rb"
       end
 
       def include_routes
