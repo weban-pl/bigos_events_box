@@ -11,11 +11,11 @@ module BigosApp
     end
 
     def render
-      "bigos_events_box/item"
+      "bigos_events_box/module/item"
     end
 
     def admin_render
-      "bigos_events_box/admin/item"
+      "bigos_events_box/module/admin/item"
     end
 
   end
