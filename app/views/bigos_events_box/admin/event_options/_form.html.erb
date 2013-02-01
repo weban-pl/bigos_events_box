@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <%= field_set_tag (f.object.name || "Event Option") do %>
+    <%= f.input :name %>
+    <%= f.input :description, :input_html=>{:class => "tinymce", :rows => 40, :cols => 220}  %>
+    <%= f.input :price %>
+    <% hide_link ||= false %>
+    <% unless hide_link %>
+      <%= link_to_remove_association "Remove event option", f, :class => "alert small button" %>
+    <% else %>
+      <%= link_to "Remove event option", bigos_events_box.admin_event_option_path(f.object), :method => :delete, :class => "alert small button", :confirm => "Are you sure?" %>
+    <% end %>
+  <% end %>
+</div>

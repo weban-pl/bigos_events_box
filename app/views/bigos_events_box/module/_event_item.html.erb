@@ -1,0 +1,11 @@
+<div>
+  <h2><%= event.name%></h2>
+  <%= image_tag event.image.url(:thumb) unless event.image.blank? %>
+  <% event.event_options.each do |eo| %>
+     <div>
+        <h4><%= eo.name %></h4>
+        <p><%= eo.description %></p>
+       <p><%= eo.price %></p>
+     </div>
+  <% end %>
+</div>

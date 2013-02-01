@@ -1,0 +1,16 @@
+<div>
+  <%= pe.simple_fields_for :events do |f| %>
+    <%= field_set_tag (f.object.name || "Event") do %>
+      <%= f.input :name %>
+      <%= f.input :image, as: "file", :hint => f.object.try(:image).try(:blank?) ? "" : f.template.image_tag(f.object.try(:image).try(:url, :thumb))  %>
+      <div id="event_options">
+        <%= f.simple_fields_for :event_options do |eo| %>
+          <%= render partial: "/bigos_events_box/admin/event_options/form", locals: {f:eo, hide_link: true} %>
+        <% end %>
+        <%= link_to_add_association 'Add new event options', f, :event_options, :partial => "bigos_events_box/admin/event_options/form", "data-association-insertion-method" => "after", :class => "small button" %>
+      </div>
+      <%= link_to "Remove event", bigos_events_box.admin_event_path(f.object), :method => :delete, :class => "alert small button", :confirm => "Are you sure?" %>
+    <% end %>
+  <% end %>
+  <%= link_to_add_association 'Add new event', pe, :events, :partial => "/bigos_events_box/admin/events/item_simpleform", "data-association-insertion-method" => "after", :class => "small button" %>
+</div>
