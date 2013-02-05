@@ -13,7 +13,8 @@ module BigosEventsBox
   end
 
   version :thumb do
-    process :resize_to_fill => [BigosEventsBox::Setting["#{BigosEventsBox.name}.thumb_width"].to_i, BigosEventsBox::Setting["#{BigosEventsBox.name}.thumb_height"].to_i]
+    #process :resize_to_fill => [BigosEventsBox::Setting["#{BigosEventsBox.name}.thumb_width"].to_i, BigosEventsBox::Setting["#{BigosEventsBox.name}.thumb_height"].to_i]
+    :resize_to_fill => [275, 45]
   end
 
   version :medium do
