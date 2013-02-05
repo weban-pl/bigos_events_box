@@ -15,6 +15,8 @@ module BigosEventsBox
       def create_settings
         Setting["#{BigosEventsBox.name}.carrier_wave_access_key_id"] = "Access key id"
         Setting["#{BigosEventsBox.name}.carrier_wave_secret_access_key"] = "Secret access key"
+        Setting["#{BigosEventsBox.name}.thumb_width"] = 245
+        Setting["#{BigosEventsBox.name}.thumb_height"] = 75
         Setting["#{BigosEventsBox.name}.carrier_wave_uploads_bucket_development_name"] = "Uploads bucket development name"
         Setting["#{BigosEventsBox.name}.carrier_wave_uploads_bucket_production_name"] = "Uploads bucket production name"
         im = BigosApp::InstalledModule.find_or_create_by_name(BigosEventsBox.name)
