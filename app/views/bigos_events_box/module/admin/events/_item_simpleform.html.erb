@@ -1,7 +1,7 @@
 <div class="nested-fields">
   <%= field_set_tag "Event" do %>
     <%= f.input :name %>
-      %= f.input :image, as: "file", :hint => f.object.try(:image).try(:blank?) ? "" : f.template.image_tag(f.object.try(:image).try(:url, :thumb))  %>
+    <%= f.input :image, as: "file", :hint => f.object.try(:image).try(:blank?) ? "" : f.template.image_tag(f.object.try(:image).try(:url, :thumb))  %>
     <div id="event_options">
       <%= link_to_add_association 'Add new event options', f, :event_options, :partial => "bigos_events_box/module/admin/event_options/form", "data-association-insertion-method" => "after", :class => "small button" %>
     </div>
