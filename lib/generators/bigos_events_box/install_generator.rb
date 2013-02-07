@@ -13,10 +13,10 @@ module BigosEventsBox
       end
 
       def create_settings
-        Setting["#{BigosEventsBox.name}.carrier_wave_access_key_id"] = "Access key id"
-        Setting["#{BigosEventsBox.name}.carrier_wave_secret_access_key"] = "Secret access key"
-        Setting["#{BigosEventsBox.name}.carrier_wave_uploads_bucket_development_name"] = "Uploads bucket development name"
-        Setting["#{BigosEventsBox.name}.carrier_wave_uploads_bucket_production_name"] = "Uploads bucket production name"
+        Setting["GS.carrier_wave_access_key_id"] = "Access key id" if Setting.find_by_var("GS.carrier_wave_access_key_id").blank?
+        Setting["GS.carrier_wave_secret_access_key"] = "Secret access key" if Setting.find_by_var("GS.carrier_wave_secret_access_key").blank?
+        Setting["GS.carrier_wave_uploads_bucket_development_name"] = "Uploads bucket development name" if Setting.find_by_var("GS.carrier_wave_uploads_bucket_development_name").blank?
+        Setting["GS.carrier_wave_uploads_bucket_production_name"] = "Uploads bucket production name" if Setting.find_by_var("GS.carrier_wave_uploads_bucket_production_name").blank?
         im = BigosApp::InstalledModule.find_or_create_by_name(BigosEventsBox.name)
         im.page_element =  BigosApp::BigosEventsBoxElement.name
         im.save
